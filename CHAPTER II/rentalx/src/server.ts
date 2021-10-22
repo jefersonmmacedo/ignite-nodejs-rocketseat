@@ -1,19 +1,19 @@
 import express from "express";
 
+import { categoriesRoutes } from "./routes/categories.routes";
+
 const server = express();
 const port = 3333;
 
 server.use(express.json());
+server.use("/categories", categoriesRoutes);
 
 server.get("/", (req, res) => {
-  return res.json({ Message: "Project inicialized!" });
-});
-
-server.post("/courses", (req, res) => {
-  const { name } = req.body;
-  return res.json({ name });
+    return res.json({ Message: "Project inicialized!" });
 });
 
 server.listen(port, () => {
-  console.log(`Server initialized! Access the link: http://localhost:${port}`);
+    console.log(
+        `Server initialized! Access the link: http://localhost:${port}`
+    );
 });
