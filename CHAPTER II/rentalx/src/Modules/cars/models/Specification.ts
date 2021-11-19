@@ -6,7 +6,7 @@ class Specification {
   description: string;
   created_at: Date;
 
-  cpnstructor() {
+  constructor() {
     if (!this.id) {
       this.id = uuidv4();
     }
