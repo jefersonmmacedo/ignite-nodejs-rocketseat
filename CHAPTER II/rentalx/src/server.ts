@@ -1,9 +1,8 @@
 import express from "express";
-
 import { router } from "./routes";
+import "./database";
 
 const server = express();
-
 const port = 3333;
 
 server.use(express.json());
@@ -14,5 +13,5 @@ server.get("/", (req, res) => {
 });
 
 server.listen(port, () => {
-  console.log(`Server initialized! Access the link: http://localhost:${port}`);
+  console.log(`Hello!. Server initialized! Access the link: http://localhost:${port}`);
 });
